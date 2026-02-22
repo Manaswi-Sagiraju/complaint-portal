@@ -1,0 +1,343 @@
+/* css/style.css - FINAL MERGED VERSION */
+
+/* --- 1. GLOBAL VARIABLES & RESET --- */
+:root {
+    --primary-color: #1e3a8a;   /* Professional Deep Blue */
+    --secondary-color: #0f172a; /* Navy/Black for text/headings */
+    --accent-color: #3b82f6;    /* Bright Blue for focus/highlights */
+    --danger-color: #ef4444;    /* Red for errors/recording */
+    --success-color: #10b981;   /* Green for success */
+    --bg-color: #f1f5f9;        /* Light Grey-Blue Background */
+    --card-bg: #ffffff;         /* White Card Background */
+    --text-color: #334155;      /* Slate Grey Text */
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    margin: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+h1, h2, h3 { 
+    color: var(--secondary-color); 
+    margin-top: 0; 
+}
+
+/* --- 2. CONTAINER & CARD STYLES (Updated for Modern Look) --- */
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 16px; /* Softer, modern corners */
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* --- 3. FORMS & INPUTS (Updated) --- */
+.form-group { 
+    margin-bottom: 1.5rem; 
+    width: 100%; 
+}
+
+label { 
+    display: block; 
+    margin-bottom: 0.5rem; 
+    font-weight: 600; 
+    color: #475569; 
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    background: #f8fafc;
+    box-sizing: border-box; /* Fixes width overflow issues */
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2); /* Soft blue glow */
+    background: white;
+}
+
+/* --- 4. BUTTONS (Updated) --- */
+.btn-primary {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 14px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    width: 100%;
+    font-size: 1rem;
+}
+
+.btn-primary:hover { 
+    background: #1e40af; 
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background-color: #e2e8f0;
+    color: var(--secondary-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.btn-secondary:hover { 
+    background-color: #cbd5e1; 
+}
+
+/* --- 5. LANDING PAGE (Split Layout - Preserved) --- */
+.split-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.left-panel {
+    flex: 1;
+    /* Gradient for visual appeal */
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3rem;
+    box-shadow: 4px 0 10px rgba(0,0,0,0.1); 
+    position: relative;
+    z-index: 2;
+}
+
+.left-panel h1, 
+.left-panel h2, 
+.left-panel h3,
+.left-panel label { 
+    color: var(--white) !important; 
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.right-panel {
+    flex: 1.5;
+    background: var(--card-bg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+}
+
+/* --- 6. UTILITIES & COMPONENTS (Preserved) --- */
+.toggle-switch {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    padding: 1.2rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 2rem;
+    color: var(--secondary-color);
+}
+
+.hidden { display: none !important; }
+
+/* Helpline Link Hover Effect */
+.helpline-link {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: all 0.2s;
+    background: #f1f5f9;
+}
+.helpline-link:hover {
+    background-color: #fee2e2;
+    color: var(--danger-color);
+}
+
+/* --- 7. ADMIN DASHBOARD STYLES (Preserved) --- */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    border-left: 5px solid var(--accent-color);
+    transition: transform 0.2s;
+}
+
+.stat-card:hover { transform: translateY(-5px); }
+
+.stat-card h1 { font-size: 2.5rem; margin: 0.5rem 0 0 0; color: var(--secondary-color); }
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+th {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 1.2rem 1rem;
+    text-align: left;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+td {
+    padding: 1rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+tr:last-child td { border-bottom: none; }
+tr:hover { background-color: #f8fafc; }
+
+/* --- 8. MODAL (Preserved) --- */
+.modal {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(15, 23, 42, 0.75); 
+    display: flex; justify-content: center; align-items: center;
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+}
+.modal-content {
+    background: white; padding: 3rem; border-radius: 16px;
+    text-align: center; max-width: 450px; width: 90%;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.complaint-id-display {
+    font-size: 2rem; font-weight: 800; color: var(--accent-color);
+    margin: 1.5rem 0; padding: 1.5rem;
+    background: #f0f9ff; border: 2px dashed var(--accent-color); border-radius: 12px;
+}
+
+/* Badges */
+.badge { padding: 4px 10px; border-radius: 20px; font-size: 0.85rem; font-weight: bold; }
+.badge-low { background: #dcfce7; color: #166534; }
+.badge-high { background: #fee2e2; color: #991b1b; }
+/* --- CUSTOM LANGUAGE SELECTOR (Searchable) --- */
+.custom-translator {
+    position: relative;
+    z-index: 1001; /* Higher than sticky headers */
+}
+
+.lang-btn {
+    background: #fff;
+    border: 1px solid #cbd5e1;
+    padding: 8px 16px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #334155;
+    font-weight: 600;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    transition: all 0.2s;
+}
+
+.lang-btn:hover {
+    background: #f8fafc;
+    border-color: #94a3b8;
+}
+
+.lang-dropdown {
+    display: none; /* Hidden by default */
+    position: absolute;
+    right: 0;
+    top: 45px;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    overflow: hidden;
+}
+
+.lang-dropdown.show {
+    display: block;
+    animation: fadeIn 0.2s ease-out;
+}
+
+.search-wrap {
+    padding: 10px;
+    border-bottom: 1px solid #e2e8f0;
+    background: #f8fafc;
+}
+
+.lang-search {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    outline: none;
+}
+
+.lang-search:focus {
+    border-color: var(--accent-color);
+}
+
+.lang-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 300px;
+    overflow-y: auto; /* Scrollable */
+}
+
+.lang-option {
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: #475569;
+    transition: background 0.1s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.lang-option:hover {
+    background: #eff6ff;
+    color: var(--primary-color);
+}
+
+/* Hide the Original Google Widget Completely */
+.goog-te-banner-frame { display: none !important; }
+body { top: 0px !important; }
+#google_translate_element { width: 0; height: 0; overflow: hidden; position: absolute; }
