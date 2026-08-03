@@ -26,7 +26,6 @@ A full-stack complaint management system where users can submit complaints (with
 
 ### Backend
 - Node.js
-- Express.js
 - MySQL
 - Multer (File Upload)
 - JWT Authentication
